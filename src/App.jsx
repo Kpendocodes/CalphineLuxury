@@ -37,7 +37,7 @@ export const products = [
         price: 24,
         category: "Lip Gloss",
         tag: "Everyday",
-        image: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=900&auto=format&fit=crop&q=85",
+        image: "https://images.pexels.com/photos/3373740/pexels-photo-3373740.jpeg?cs=srgb&dl=pexels-shiny-diamond-3373740.jpg&fm=jpg",
     },
     {
         id: 5,
