@@ -327,7 +327,7 @@ export default function App() {
 
                     <div className="hero-image">
                         <img
-                            src="https://images.unsplash.com/photo-1642081626339-6862a6014b9c?w=1350&auto=format&fit=crop&q=85"
+                            src="https://images.splitshire.com/full/image_6e53d8.jpg"
                             alt="Black woman in a luxury beauty editorial portrait"
                         />
                         <span className="hero-stamp">OWN YOUR GLOW ✦</span>
