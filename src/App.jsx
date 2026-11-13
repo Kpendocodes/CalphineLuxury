@@ -1,71 +1,119 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 
-// Sample products — replace with Paula's actual products later.
+// Calphine Luxury signature colour collection.
 export const products = [
     {
         id: 1,
-        name: "Velvet Lip Colour",
-        description: "Rich colour. Effortless elegance.",
+        name: "Sovereign",
+        description: "A confident, statement-making lip shade.",
         price: 28,
-        category: "Lips",
-        tag: "Bestseller",
-        image:
-            "https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=900&auto=format&fit=crop&q=85",
+        category: "Lipsticks",
+        tag: "Signature",
+        image: "https://images.unsplash.com/photo-1696255725069-0d7c0ba07f2c?w=900&auto=format&fit=crop&q=85",
     },
     {
         id: 2,
-        name: "Golden Hour Glow",
-        description: "A little light, wherever you go.",
-        price: 36,
-        category: "Face",
-        tag: "Signature",
-        image:
-            "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=900&auto=format&fit=crop&q=85",
+        name: "Raw Intention",
+        description: "A bold expression of colour for every occasion.",
+        price: 28,
+        category: "Lipsticks",
+        tag: "Essential",
+        image: "https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=900&auto=format&fit=crop&q=85",
     },
     {
         id: 3,
-        name: "The Essential Edit",
-        description: "Your everyday beauty ritual.",
-        price: 48,
-        category: "Sets",
-        tag: "New",
-        image:
-            "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=900&auto=format&fit=crop&q=85",
+        name: "Silk Sheets",
+        description: "A smooth, polished finish with timeless appeal.",
+        price: 28,
+        category: "Lipsticks",
+        tag: "Signature",
+        image: "https://images.unsplash.com/photo-1625093742435-6fa192b6fb10?w=900&auto=format&fit=crop&q=85",
     },
     {
         id: 4,
-        name: "Satin Rose Blush",
-        description: "A flush of soft, luminous colour.",
-        price: 32,
-        category: "Face",
-        tag: "New",
-        image:
-            "https://images.unsplash.com/photo-1625093742435-6fa192b6fb10?w=900&auto=format&fit=crop&q=85",
+        name: "Crystal Clear",
+        description: "A sheer gloss for a glass-like shine.",
+        price: 24,
+        category: "Lip Gloss",
+        tag: "Everyday",
+        image: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=900&auto=format&fit=crop&q=85",
     },
     {
         id: 5,
-        name: "Radiant Skin Edit",
-        description: "The finishing touch for a luminous look.",
-        price: 42,
-        category: "Face",
+        name: "Shimmering Pink",
+        description: "A luminous pink gloss with a soft shimmer.",
+        price: 26,
+        category: "Lip Gloss",
         tag: "Glow Edit",
-        image:
-            "https://images.unsplash.com/photo-1590156560637-71b1e8f6ab08?w=900&auto=format&fit=crop&q=85",
+        image: "https://images.unsplash.com/photo-1590156560637-71b1e8f6ab08?w=900&auto=format&fit=crop&q=85",
     },
     {
         id: 6,
-        name: "The Brush Ritual",
-        description: "Tools for the beauty looks you love.",
+        name: "Rich Nude",
+        description: "A versatile nude gloss with a polished finish.",
+        price: 24,
+        category: "Lip Gloss",
+        tag: "Signature",
+        image: "https://images.unsplash.com/photo-1523634118614-82b2685ee3df?w=900&auto=format&fit=crop&q=85",
+    },
+    {
+        id: 7,
+        name: "Cool Contour",
+        description: "Define and shape with a cool-toned liner.",
+        price: 20,
+        category: "Lip Liner",
+        tag: "Definition",
+        image: "https://images.unsplash.com/photo-1523634118614-82b2685ee3df?w=900&auto=format&fit=crop&q=85",
+    },
+    {
+        id: 8,
+        name: "Everyday Pinky",
+        description: "A soft pink liner for effortless definition.",
+        price: 20,
+        category: "Lip Liner",
+        tag: "Everyday",
+        image: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=900&auto=format&fit=crop&q=85",
+    },
+    {
+        id: 9,
+        name: "Crisp Red",
+        description: "A clean, classic red lip outline.",
+        price: 20,
+        category: "Lip Liner",
+        tag: "Classic",
+        image: "https://images.unsplash.com/photo-1696255725069-0d7c0ba07f2c?w=900&auto=format&fit=crop&q=85",
+    },
+    {
+        id: 10,
+        name: "Neutral Quad",
+        description: "Four versatile neutrals for everyday definition.",
         price: 38,
-        category: "Tools",
+        category: "Eyeshadow",
         tag: "Essential",
-        image:
-            "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=900&auto=format&fit=crop&q=85",
+        image: "https://images.unsplash.com/photo-1768983224486-b4dcd179b4a5?w=900&auto=format&fit=crop&q=85",
+    },
+    {
+        id: 11,
+        name: "Smoky Charcoal Evening Mix",
+        description: "A deeper charcoal edit for elevated evening looks.",
+        price: 42,
+        category: "Eyeshadow",
+        tag: "Evening Edit",
+        image: "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=900&auto=format&fit=crop&q=85",
+    },
+    {
+        id: 12,
+        name: "Soft Mauve/Taupe Slate",
+        description: "Muted mauve and taupe tones for a soft smoky eye.",
+        price: 38,
+        category: "Eyeshadow",
+        tag: "Signature",
+        image: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=900&auto=format&fit=crop&q=85",
     },
 ];
 
-const CART_KEY = "calphine-luxury-cart-v2";
+const CART_KEY = "calphine-luxury-cart-v3";
 const currency = new Intl.NumberFormat("en-CA", {
     style: "currency",
     currency: "CAD",
@@ -100,7 +148,7 @@ export default function App() {
     const [signupMessage, setSignupMessage] = useState("");
     const [checkoutMessage, setCheckoutMessage] = useState("");
 
-    const categories = ["All", "Lips", "Face", "Sets", "Tools"];
+    const categories = ["All", "Lipsticks", "Lip Gloss", "Lip Liner", "Eyeshadow"];
 
     const cartCount = cart.reduce(
         (total, item) => total + item.qty,
@@ -279,8 +327,8 @@ export default function App() {
 
                     <div className="hero-image">
                         <img
-                            src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=1350&auto=format&fit=crop&q=85"
-                            alt="Luxury beauty portrait"
+                            src="https://images.splitshire.com/full/image_6e53d8.jpg"
+                            alt="Black woman in a luxury beauty editorial portrait"
                         />
                         <span className="hero-stamp">OWN YOUR GLOW ✦</span>
                     </div>
@@ -316,7 +364,7 @@ export default function App() {
                         <p className="eyebrow">YOUR BEAUTY ESSENTIALS</p>
                         <h2>THE SIGNATURE EDIT</h2>
                         <p>
-                            Statement-making beauty for every version of you.
+                            Four signature collections. Twelve essentials. Beauty that celebrates you.
                         </p>
                     </div>
 
@@ -402,8 +450,8 @@ export default function App() {
                 <section className="story-section" id="story">
                     <div className="story-image">
                         <img
-                            src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=1100&auto=format&fit=crop&q=85"
-                            alt="Natural glowing beauty"
+                            src="https://images.unsplash.com/photo-1699726242741-11e3ccc06610?w=1100&auto=format&fit=crop&q=85"
+                            alt="Black woman in a beauty editorial applying makeup"
                             loading="lazy"
                         />
                     </div>
